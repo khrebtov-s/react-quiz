@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './FinishedQuiz.css'
 import Button from '../UI/button/button'
+import { Link } from 'react-router-dom'
 
 
 const FinishedQuiz = (props) => {
@@ -27,7 +28,7 @@ const FinishedQuiz = (props) => {
                             key={index}
                         >
                             <strong>{index + 1}</strong>.&nbsp;
-                                {quizItem.question}
+                            {quizItem.question}
                             <i className={cls.join(' ')} />
                         </li>
                     )
@@ -38,17 +39,20 @@ const FinishedQuiz = (props) => {
             <div>
                 <Button
                     onClick={props.onRetry}
-                    type={'primary'}
+                    type='primary'
                     disabled={false}
                 >
                     Repeat
                 </Button>
-                <Button
-                    type={'success'}
-                    disabled={false}
-                >
-                    Go to the test list
+                <Link to='/'>
+                    <Button
+                        type='success'
+                        disabled={false}
+                    >
+                        Go to the test list
                 </Button>
+                </Link>
+
             </div>
         </div>
     );
