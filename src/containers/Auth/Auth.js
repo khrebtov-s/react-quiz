@@ -123,7 +123,7 @@ export default class Auth extends Component {
                         <Button
                             type='success'
                             onClick={this.loginHandler}
-                            disabled={this.state.isFormValid}
+                            disabled={!this.state.isFormValid}
                         >
                             Login
                         </Button>
@@ -131,7 +131,7 @@ export default class Auth extends Component {
                         <Button
                             type='primary'
                             onClick={this.signupHandler}
-                            disabled={this.state.isFormValid}
+                            disabled={!this.state.isFormValid}
                         >
                             Sign up
                         </Button>
